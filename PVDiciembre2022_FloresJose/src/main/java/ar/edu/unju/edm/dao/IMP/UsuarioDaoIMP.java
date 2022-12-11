@@ -23,5 +23,12 @@ public class UsuarioDaoIMP implements IUsuarioDao{
 		
 		return em.createQuery("from Usuario").getResultList();
 	}
+	@Override
+	@Transactional
+	public void save(Usuario usuario) {
+		// TODO Auto-generated method stub
+		em.persist(usuario);
+		
+	}
 
 }
