@@ -35,7 +35,7 @@
 	</nav>
 	<div class="container">
 		<h1 class="text-primary border border.success" th:text=${titulo}></h1>
-<a th:href="@{/form}">Crear usuarios</a>
+<p><a class="btn btn-success" th:href="@{/form}">Crear usuarios</a></p>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -45,6 +45,8 @@
 					<th>Fecha de Nacimiento</th>
 					<th>Password</th>
 					<th>Tipo de usuario</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,6 +57,8 @@
 					<td th:text="${usuario.FechaDeNacimiento}"></td>
 					<td th:text="${usuario.password}"></td>
 					<td th:text="${usuario.tipoUsuario}"></td>
+					<td><a class="btn btn-success" th:href="@{/form/} + ${usuario.DNI}">Modificar</a></td>
+					<td><a class="btn btn-danger" th:href="@{/eliminar/} + ${usuario.DNI}" onclick="return confirm('Estás seguro que quieres eliminar este usuario?');">Eliminar</a></td>
 				</tr>
 			</tbody>
 		</table>

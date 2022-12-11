@@ -14,54 +14,69 @@
 		<h1 class="text-primary border border.success" th:text=${titulo}></h1>
 
 		<form th:action="@{/form}" th:object="${usuario}" method="post">
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">DNI</label>
-					<div class="col-sm-6">
-					<input type="number" th:field="*{DNI}" class="form-control" th:errorclass="´form-control alert-danger´">
-					<small></small>
+				<div class="col-sm-6">
+					<input type="number" th:field="*{DNI}" class="form-control"
+						th:errorclass="'form-control alert-danger'"/> 
+						<small class="form-text text-danger" th:if="${#fields.hasErrors('DNI')}" th:errors="*{DNI}"></small>
 				</div>
 			</div>
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">Nombre</label>
-					<div class="col-sm-6">
-					<input type="text" th:field="*{nombre}" class="form-control" th:errorclass="´form-control alert-danger´"/>
-					<small class="form-text text-damger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				<div class="col-sm-6">
+					<input type="text" th:field="*{nombre}" class="form-control"
+						th:errorclass="'form-control alert-danger'" /> 
+						<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
 				</div>
 			</div>
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">Apellido</label>
-					<div class="col-sm-6">
-					<input type="text" th:field="*{apellido}" class="form-control" th:errorclass="´form-control alert-danger´"/>
-					<small class="form-text text-damger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+				<div class="col-sm-6">
+					<input type="text" th:field="*{apellido}" class="form-control"
+						th:errorclass="'form-control alert-danger'" /> <small
+						class="form-text text-damger"
+						th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
 				</div>
 			</div>
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">Fecha de Nacimiento</label>
-					<div class="col-sm-6">
-					<input type= "date" th:field="*{FechaDeNacimiento}"class="form-control" th:errorclass="´form-control alert-danger´"/>
-					<small class="form-text text-damger" th:if="${#fields.hasErrors('FechaDeNacimiento')}" th:errors="*{FechaDeNacimiento}"></small>
+				<div class="col-sm-6">
+					<input type="date" th:field="*{FechaDeNacimiento}"
+						class="form-control" th:errorclass="'form-control alert-danger'" />
+					<small class="form-text text-damger"
+						th:if="${#fields.hasErrors('FechaDeNacimiento')}"
+						th:errors="*{FechaDeNacimiento}"></small>
 				</div>
 			</div>
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">Password</label>
-					<div class="col-sm-6">
-					<input type="text" th:field="*{password}" class="form-control" th:errorclass="´form-control alert-danger´"/>
-					<small class="form-text text-damger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>	
+				<div class="col-sm-6">
+					<input type="text" th:field="*{password}" class="form-control"
+						th:errorclass="'form-control alert-danger'" /> <small
+						class="form-text text-damger"
+						th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
 				</div>
 			</div>
-			<div>
+			<div class="form-group arow">
 				<label class="col-sm-2 col-form-label">Tipo de usuario</label>
-					<div class="col-sm-6">
-					<input type="text" th:field="*{tipoUsuario}" class="form-control" th:errorclass="´form-control alert-danger´" />
-					<small class="form-text text-damger" th:if="${#fields.hasErrors('tipoUsuario')}" th:errors="*{tipoUsuario}"></small>				
+				<div class="col-sm-6">
+					<input type="text" th:field="*{tipoUsuario}" class="form-control"
+						th:errorclass="'form-control alert-danger'"/> <small
+						class="form-text text-damger"
+						th:if="${#fields.hasErrors('tipoUsuario')}"
+						th:errors="*{tipoUsuario}"></small>
 				</div>
 			</div>
-				<tr>
-					<td><input type="submit" value="Crear Usuario" class="btn btn-outline-danger"/></td>
-				</tr>
+			<div class="form-group arow">
+				<div class="col-sm-6">
+					<input type="submit" value="Crear Usuario"
+						class="btn btn-outline-danger" />
+				</div>
+			</div>
 		</form>
 	</div>
-	
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

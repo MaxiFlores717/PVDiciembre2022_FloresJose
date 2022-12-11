@@ -8,4 +8,6 @@ public interface IUsuarioDao {
 
 	public List<Usuario> findAll();
 	public void save(Usuario usuario);
+	public Usuario buscarDni(Long dni);
+	public void eliminar(Long DNI);
 }

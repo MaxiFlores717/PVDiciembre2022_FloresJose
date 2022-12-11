@@ -20,6 +20,7 @@ public class Usuario implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@NotNull
 	private Long DNI;
 	@NotEmpty
 	private String nombre;

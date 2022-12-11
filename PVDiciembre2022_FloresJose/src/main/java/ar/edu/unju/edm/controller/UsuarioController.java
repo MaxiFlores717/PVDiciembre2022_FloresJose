@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,9 +38,23 @@ public class UsuarioController {
 			return "form";
 		}
 		else {
-
 			usuarioDao.save(usuario);
 			return "redirect:listar";
 		}
 	}
+	@RequestMapping(value = "/form/{dni}")
+	public String modificar(@PathVariable(value = "dni") Long dni, Model model) {
+		Usuario usuario=null;
+		usuario = usuarioDao.buscarDni(dni);
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("titulo", "Editar Usuario");
+		
+		return "form";
+	}
+	@RequestMapping(value = "/eliminar/{dni}")
+	public String eliminar(@PathVariable(value = "dni") Long dni){
+		usuarioDao.eliminar(dni);
+		return "redirect:/listar";
+	}
+	
 }
