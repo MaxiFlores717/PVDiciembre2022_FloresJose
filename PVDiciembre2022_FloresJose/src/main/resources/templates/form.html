@@ -51,7 +51,7 @@
 					<div class="form-group arow">
 						<label class="col-sm-2 col-form-label">Password</label>
 						<div class="col-sm-6">
-							<input type="text" th:field="*{password}" class="form-control"
+							<input type="password" th:field="*{password}" class="form-control"
 								th:errorclass="'form-control alert-danger'" /> <small
 								class="form-text text-damger"
 								th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>

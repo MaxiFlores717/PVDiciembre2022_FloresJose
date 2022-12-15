@@ -18,7 +18,7 @@ public class UsuarioController {
 	@Autowired
 	private IUsuarioDao usuarioDao;
 	
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@RequestMapping(value = {"/listar", "/"}, method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de usuarios");
 		model.addAttribute("usuarios", usuarioDao.findAll());
